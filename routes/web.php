@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BranchController;
+use App\Http\Controllers\CustomerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,8 @@ Route::get('/', function () {
 
 Route::get('/branches', [BranchController::class, 'show']);
 Route::post('branch/create', [BranchController::class, 'create']);
+
+
+Route::get('/customers', [CustomerController::class, 'show_all']);
+Route::get('/customer/{id}', [CustomerController::class, 'show']);
+Route::post('/customer/create', [CustomerController::class, 'create']);

@@ -13,7 +13,9 @@ class BranchController extends Controller
 
     public function show()
     {
-
+        dd(
+            $this->highest_branch_balance()
+        );
         $branches = DB::table($this->table)
             ->get();
         return view('branches', ['branches' => $branches]);
@@ -26,11 +28,27 @@ class BranchController extends Controller
         ]);
 
 
-        $validated['user_id'] = null;
-
 
         DB::table($this->table)->insert([
             $validated
         ]);
+
+        return redirect()->back();
+    }
+
+    private function highest_branch_balance()
+    {
+
+        $highest = DB::table('users_branches')
+            ->join('branches', 'branches.id', '=', 'users_branches.branch_id')
+            ->join('balances', 'users_branches.user_id', '=', 'balances.user_id')
+            ->select('name', DB::raw('MAX(balance) as highest_balance'))
+            ->where('balance', '>', 50000)
+            ->groupBy('branches.name')
+            ->get();
+
+
+
+        return ['highest_balance_branch' => $highest];
     }
 }

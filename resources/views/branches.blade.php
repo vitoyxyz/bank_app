@@ -3,28 +3,30 @@
 @section('title', 'Page Title')
 
 @section('sidebar')
-@parent
+    @parent
 
-<p>This is appended to the master sidebar.</p>
+    <p>This is appended to the master sidebar.</p>
 @endsection
 
 @section('content')
-<p>Branches Page</p>
+    <p>Branches Page</p>
 
-@foreach($branches as $branch)
+    @foreach ($branches as $branch)
 
-<p> {{$branch->location_name}} </p>
+        <p> {{ $branch->name }} </p>
 
-@endforeach
+    @endforeach
 
-<form method="POST" action="/branch/create">
-    @csrf
+    <form method="POST" action="/branch/create">
+        @csrf
 
-    <input type="text" id="name" name="name">
-    <input type="submit" value="Submit">
-</form>
+        <input type="text" id="name" name="name">
+        <input type="submit" value="Submit">
+    </form>
 
-@error('name')
-<div class="alert alert-danger">Error:{{ $message }}</div>
-@enderror
+    @if ($errors->any())
+        @foreach ($errors->all() as $error)
+            <div>{{ $error }}</div>
+        @endforeach
+    @endif
 @endsection

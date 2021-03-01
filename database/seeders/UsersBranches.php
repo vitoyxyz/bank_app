@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class BalanceSeeder extends Seeder
+class UsersBranches extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,10 +15,9 @@ class BalanceSeeder extends Seeder
     public function run()
     {
         for ($i = 1; $i < 4; $i++) {
-            DB::table('balances')->insert([
-                'id' => $i,
-                'balance' => $i * 10000,
-                'user_id' => $i
+            DB::table('users_branches')->insert([
+                'user_id' => $i,
+                'branch_id' => $i,
             ]);
         }
     }

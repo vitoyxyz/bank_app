@@ -17,7 +17,6 @@ class BranchSeeder extends Seeder
         for ($i = 1; $i < 4; $i++) {
             DB::table('branches')->insert([
                 'name' => 'Bank Ohrid ' . $i,
-                'user_id' => $i
             ]);
         }
     }
