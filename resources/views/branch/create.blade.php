@@ -9,7 +9,7 @@
             <input type="text" id="name" name="name">
             <label for="location">Location Name:</label>
             <input type="text" id="location" name="location">
-            <input type="submit" value="Submit">
+            <input type="submit" class="btn"value="Submit">
         </form>
 
         @if ($errors->any())

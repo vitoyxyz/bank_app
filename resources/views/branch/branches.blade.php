@@ -30,8 +30,9 @@
     {{-- {{ $highest_balance_branch }} --}}
 
     <br>
-    <a class="underline" href="{{ url('/branch/create') }}">Create Branch</a>
-
+    <h3>
+        <a class="btn" href="{{ url('/branch/create') }}">Create Branch</a>
+    </h3>
     @if ($errors->any())
         @foreach ($errors->all() as $error)
             <div>{{ $error }}</div>

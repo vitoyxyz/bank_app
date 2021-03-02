@@ -22,7 +22,7 @@
         </select>
         <label for="balance">Amount:</label>
         <input type="text" id="amount" name="amount" value={{ old('balance') }}>
-        <input type="submit" value="Send!">
+        <input type="submit" class="btn" value="Send!">
     </form>
     <br>
     <h2>Transaction:</h2>

@@ -22,6 +22,6 @@
 
     <br>
     <h3>
-        <a class="underline" href="{{ url('/customer/create') }}">Create Customer</a>
+        <a class="btn" href="{{ url('/customer/create') }}">Create Customer</a>
     </h3>
 @endsection

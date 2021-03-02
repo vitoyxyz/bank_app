@@ -18,7 +18,7 @@
 
             @endforeach
         </select>
-        <input type="submit" value="Create">
+        <input type="submit" class="btn" value="Create">
     </form>
 
     @if ($errors->any())

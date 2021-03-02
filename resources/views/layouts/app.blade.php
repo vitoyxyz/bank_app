@@ -30,6 +30,22 @@
                 background-color: transparent
             }
 
+            form input {
+                border: 2px solid grey;
+            }
+
+            form input[type="submit"] {
+                width: 150px;
+                margin-left: 20px;
+                border: 2px solid grey;
+                border-radius: 7px;
+            }
+
+            .btn {
+                border: 2px solid grey;
+                padding: 10px;
+            }
+
             [hidden] {
                 display: none
             }
