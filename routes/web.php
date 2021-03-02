@@ -19,10 +19,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/branches', [BranchController::class, 'show']);
-Route::post('branch/create', [BranchController::class, 'create']);
+Route::get('/branches', [BranchController::class, 'show_all']);
+Route::get('branch/create', [BranchController::class, 'create']);
+Route::get('/branch/{id}', [BranchController::class, 'show']);
+Route::post('branch/store', [BranchController::class, 'store']);
 
 
 Route::get('/customers', [CustomerController::class, 'show_all']);
+Route::get('/customer/create', [CustomerController::class, 'create']);
 Route::get('/customer/{id}', [CustomerController::class, 'show']);
-Route::post('/customer/create', [CustomerController::class, 'create']);
+Route::post('/customer/store', [CustomerController::class, 'store']);
+Route::post('/customer/transfer', [CustomerController::class, 'transfer_money']);

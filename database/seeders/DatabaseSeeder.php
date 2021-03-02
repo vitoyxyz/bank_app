@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             BranchSeeder::class,
             BalanceSeeder::class,
-            UsersBranches::class
+            UsersBranchesSeeder::class
         ]);
     }
 }

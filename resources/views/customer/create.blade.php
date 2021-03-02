@@ -1,24 +1,8 @@
 @extends('layouts.app')
-
-@section('title', 'Page Title')
-
-@section('sidebar')
-    @parent
-
-    <p>This is appended to the master sidebar.</p>
-@endsection
-
 @section('content')
-    <p>Customers</p>
 
-    @foreach ($users as $user)
-
-        <p>{{ $user->id }}:{{ $user->name }}:{{ $user->email }} :{{ $user->balance }} </p>
-
-    @endforeach
-
-    <h3>Create Customer:</h3>
-    <form method="POST" action="/customer/create">
+    <h2>Create Customer:</h2>
+    <form method="POST" action="/customer/store">
         @csrf
         <label for="email">Customer Email:</label>
         <input type="text" id="email" name="email" value={{ old('email') }}>
